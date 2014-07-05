@@ -11,7 +11,7 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-lg-6">
-                    <img class="img-responsive" src="{{ STATIC_URL }}img/jizz.jpg">
+                    <img class="img-responsive" src="{{ STATIC_URL }}img/ballena.jpg">
                 </div>
                 <div class="col-lg-6">
                     <h3>Username: </h3> <span style="font-size: 18px">Cris_Towi</span>
@@ -19,7 +19,8 @@
                     <h3>Apellido Paterno: </h3> <span style="font-size: 18px">Consuelo</span>
                     <h3>Apellido Materno: </h3> <span style="font-size: 18px">Mayén</span>
                     <br><br>
-                    <button class="btn btn-primary">Seguir</button>
+                    <button class="btn btn-success" data-toggle="modal" data-target="#ModalSeguir">Seguir</button>
+                    <a href="#" data-toggle="modal" data-target="#ModalDenunciar">Denunciar</a>
                 </div>
             </div>
             <div>
@@ -31,4 +32,82 @@
     </div>
     <!-- /.panel -->
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="ModalSeguir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Nombre de Usuario</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-lg-4">
+                <h4>Seguidores:</h4>
+                <p><h4>123</h4></p>
+            </div>
+            <div class="col-lg-4">
+                <h4>Siguiendo:</h4>
+                <p><h4>32</h4></p>
+            </div>
+            <div class="col-lg-4">
+                <h4>Publicaciones:</h4>
+                <p><h4>500</h4></p>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-success">Seguir</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="ModalDenunciar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Titulo</h4>
+      </div>
+      <div class="modal-body">
+                <form role="form">
+                    <div class="form-group">
+                        <label>Titulo del Reporte</label>
+                        <input class="form-control" placeholder="Titulo">
+                        <p class="help-block">Ejemplo: Noticia Falsa</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Razón</label>
+                        <select class="form-control">
+                            <option>Razón 1</option>
+                            <option>Razón 2</option>
+                            <option>Razón 3</option>
+                            <option>Razón 4</option>
+                            <option>Razón 5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Imagen</label>
+                        <input type="file">
+                    </div>
+                    <div class="form-group">
+                        <label>Explicacion (Opcional)</label>
+                        <textarea class="form-control" rows="10"></textarea>
+                        <p class="help-block">Trata de ser lo más claro posible =) </p>
+                    </div>
+                    <br>
+                </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-warning">Denunciar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock %}

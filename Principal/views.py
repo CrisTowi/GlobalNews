@@ -14,6 +14,21 @@ def lista_mensajes(request):
 	ctx = {}
 	return render(request, 'lista_mensajes.html', ctx)
 
+def lista_seguidos(request):
+	ctx = {'nombre_vista': 'Lista de Seguidores'}
+	return render(request, 'lista_seguidos.html', ctx)
+
+def lista_seguidores(request):
+	ctx = {'nombre_vista': 'Lista de Seguidores'}
+	return render(request, 'lista_seguidores.html', ctx)
+
+def lista_publicaciones(request):
+	ctx = {'nombre_vista': 'Lista de Publicaciones'}
+	return render(request, 'lista_publicaciones.html', ctx)
+
+def lista_publicaciones_seccion(request):
+	ctx = {'nombre_vista': 'Lista de Publicaciones en Seccion'}
+	return render(request, 'lista_publicaciones_seccion.html', ctx)	
 
 #Muestran info
 def index(request):
@@ -38,6 +53,9 @@ def nuevo_usuario(request):
 	ctx = {}
 	return render(request, 'nuevo_usuario.html', ctx)
 
+def editar_post(request):
+	ctx = {}
+	return render(request, 'editar_post.html', ctx)
 
 #Sesiones
 def login(request):
