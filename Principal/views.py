@@ -11,7 +11,7 @@ def lista_usuarios(request):
 	return render(request, 'usuarios_admin.html', ctx)
 
 def lista_mensajes(request):
-	ctx = {}
+	ctx = {'nombre_vista': 'Lista de Mensajes Directos'}
 	return render(request, 'lista_mensajes.html', ctx)
 
 def lista_seguidos(request):
@@ -56,6 +56,10 @@ def nuevo_usuario(request):
 def editar_post(request):
 	ctx = {}
 	return render(request, 'editar_post.html', ctx)
+
+def editar_perfil(request):
+	ctx = {}
+	return render(request, 'editar_perfil.html', ctx)
 
 #Sesiones
 def login(request):

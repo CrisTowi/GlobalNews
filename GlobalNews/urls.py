@@ -1,4 +1,4 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import patterns, url
 
 from django.contrib import admin
 admin.autodiscover()
@@ -25,5 +25,6 @@ urlpatterns = patterns('',
     url(r'nuevo/usuario/$', 'Principal.views.nuevo_usuario', name='nuevo_usuario'),
 
     url(r'editar/post/$', 'Principal.views.editar_post', name='editar_post'),
+    url(r'editar/usuario/$', 'Principal.views.editar_perfil', name='editar_perfil'),
 
 )
