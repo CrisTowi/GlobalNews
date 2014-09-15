@@ -1,10 +1,39 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 
+from Principal.models import Usuario,Nota,ReporteUsuario,ReporteNota,Seccion
+from rest_framework import viewsets
+from Principal.serializers import UsuarioSerializer,NotaSerializer,ReporteUsuarioSerializer,ReporteNotaSerializer,SeccionSerializer
+
+#Viwesets para el API REST
+class UsuarioViewSet(viewsets.ModelViewSet):
+    queryset = Usuario.objects.all()
+    serializer_class = UsuarioSerializer
+
+class NotaViewSet(viewsets.ModelViewSet):
+    queryset = Nota.objects.all()
+    serializer_class = NotaSerializer
+
+class ReporteUsuarioViewSet(viewsets.ModelViewSet):
+    queryset = ReporteUsuario.objects.all()
+    serializer_class = ReporteUsuarioSerializer
+
+class ReporteNotaViewSet(viewsets.ModelViewSet):
+    queryset = ReporteNota.objects.all()
+    serializer_class = ReporteNotaSerializer	
+
+class SeccionViewSet(viewsets.ModelViewSet):
+    queryset = Seccion.objects.all()
+    serializer_class = SeccionSerializer	
+
 #Listas
 def lista_reportes(request):
 	ctx = {}
 	return render(request, 'reportes.html', ctx)
+
+def lista_reportes_usuario(request):
+	ctx = {}
+	return render(request, 'reportes_usuarios.html', ctx)
 
 def lista_usuarios(request):
 	ctx = {}
